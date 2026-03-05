@@ -1,4 +1,4 @@
-let i = 11; // Условие false с начала
+let i = 11; 
 do {
     console.log(i); 
     i++;
