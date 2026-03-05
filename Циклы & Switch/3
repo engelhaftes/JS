@@ -1,0 +1,11 @@
+let i = 11; // Условие false с начала
+do {
+    console.log(i); 
+    i++;
+} while (i <= 10);
+
+i = 11;
+while (i <= 10) {
+    console.log(i);
+    i++;
+}
