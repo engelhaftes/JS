@@ -1,6 +1,6 @@
 function slidingWindowMax(arr, k) {
     const res = [];
-    const deque = []; // Индексы
+    const deque = [];
     for (let i = 0; i < arr.length; i++) {
         while (deque.length && arr[deque[deque.length - 1]] < arr[i]) deque.pop();
         deque.push(i);
