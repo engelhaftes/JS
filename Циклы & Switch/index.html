@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Задания - циклы и переключатели</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #4a90e2;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        #output {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 600px;
+            overflow-y: auto;
+            font-size: 14px;
+            color: #555;
+        }
+        .task-header {
+            color: #e94e77;
+            font-weight: bold;
+            margin-top: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 24px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #357bd8;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Выполнение 100 JS Заданий</h1>
+        <p style="text-align: center; color: #666;">Нажмите кнопку, чтобы запустить все задания. Вывод появится ниже.</p>
+        <button onclick="runAllTasks()">Запустить Задания</button>
+        <div id="output"></div>
+    </div>
+    <footer>sigma sigma boy</footer>
+
+    <script>
+        const outputDiv = document.getElementById('output');
+        const originalLog = console.log;
+        console.log = function(...args) {
+            const taskId = args[0] && args[0].startsWith('#') ? args.shift() : '';
+            if (taskId) {
+                outputDiv.innerHTML += `<div class="task-header">${taskId}</div>`;
+            }
+            outputDiv.innerHTML += args.map(arg => typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg).join(' ') + '<br>';
+        };
+        console.error = console.log;
+
+        function runAllTasks() {
+            outputDiv.innerHTML = ''; 
+            const tasks = [
+                'task001.js', 'task002.js', 'task003.js', 'task004.js', 'task005.js',
+                'task006.js', 'task007.js', 'task008.js', 'task009.js', 'task010.js',
+                'task011.js', 'task012.js', 'task013.js', 'task014.js', 'task015.js',
+                'task016.js', 'task017.js', 'task018.js', 'task019.js', 'task020.js',
+                'task021.js', 'task022.js', 'task023.js', 'task024.js', 'task025.js',
+                'task026.js', 'task027.js', 'task028.js', 'task029.js', 'task030.js',
+                'task031.js', 'task032.js', 'task033.js', 'task034.js', 'task035.js',
+                'task036.js', 'task037.js', 'task038.js', 'task039.js', 'task040.js',
+                'task041.js', 'task042.js', 'task043.js', 'task044.js', 'task045.js',
+                'task046.js', 'task047.js', 'task048.js', 'task049.js', 'task050.js',
+                'task053.js', 'task054.js', 'task055.js', 'task056.js', 'task057.js',
+                'task058.js', 'task059.js', 'task060.js', 'task061.js', 'task062.js',
+                'task063.js', 'task064.js', 'task065.js', 'task066.js', 'task067.js',
+                'task068.js', 'task069.js', 'task070.js', 'task071.js', 'task072.js',
+                'task073.js', 'task074.js', 'task075.js', 'task076.js', 'task077.js',
+                'task078.js', 'task079.js', 'task080.js', 'task081.js', 'task082.js',
+                'task083.js', 'task084.js', 'task085.js', 'task086.js', 'task087.js',
+                'task088.js', 'task089.js', 'task090.js', 'task091.js', 'task092.js',
+                'task093.js', 'task094.js', 'task095.js', 'task096.js', 'task097.js',
+                'task098.js', 'task099.js', 'task100.js'
+            ];
+            tasks.forEach(task => {
+                const script = document.createElement('script');
+                script.src = task;
+                document.body.appendChild(script);
+            });
+        }
+    </script>
+</body>
+</html>
